@@ -2,6 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import { Link } from 'react-router'
+import $ from 'jquery'
 
 var SearchBar = React.createClass({
   displayName: 'Search Bar',
@@ -10,13 +11,22 @@ var SearchBar = React.createClass({
   },
   getInitialState () {
     return {
-      options: [
-        { value: 'mcdonalds', label: 'McDonalds' },
-        { value: 'burger king', label: 'Burger King' },
-        { value: "bob's burgers", label: "Bob's Burgers" },
-      ],
+      options: [],
       value: null
     };
+  },
+  componentWillMount () {
+    $.ajax({
+      url: 'https://0kh51eeh8l.execute-api.us-east-1.amazonaws.com/dev/opentable/list',
+      dataType: 'json',
+      success: function(data) {
+        console.log(data)
+        this.setState({options: data})
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this, status, err.toString())
+      }.bind(this)
+    });
   },
   onChange(value) {
     this.setState({ value });
