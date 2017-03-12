@@ -46,7 +46,7 @@ const MenuContainer = React.createClass({
 
     return (
       <div>
-        <h1>Update your menu</h1>
+        <h2>Update Your Menu</h2>
         <table>
           {menuItems}
         </table>

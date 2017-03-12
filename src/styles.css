@@ -34,11 +34,12 @@ body {
   text-align: center;
 }
 
-#restaurant-details {
+#dashboard {
+  padding-top: 150px;
   text-align: center;
 }
 
-.btn {
+.go {
   margin-top: 5px;
   width: 100px;
 }
