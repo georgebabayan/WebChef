@@ -1,11 +1,14 @@
 const React = require('react')
 
 const RestaurantMap = React.createClass({
-  componentDidMount(){
+  componentDidUpdate(){
+    console.log('prop', this.props)
+    var lat = this.props.data.latitude
+    var lon = this.props.data.longitude
         var google = window.google
 
         function initMap() {
-        var uluru = {lat: 37.7749, lng: -122.4194};
+        var uluru = {lat: +lat, lng: +lon};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 16,
           center: uluru

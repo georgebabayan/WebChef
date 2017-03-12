@@ -4,7 +4,7 @@ const Contact = React.createClass({
   render(){
     var { data } = this.props
 
-    var contactInfo = ['phone', 'email', 'facebook', 'twitter'].map((contact) => {
+    var contactInfo = ['phone_number', 'email', 'facebook', 'twitter'].map((contact) => {
       if (data[contact]){
       return (
         <tr key={contact}>
