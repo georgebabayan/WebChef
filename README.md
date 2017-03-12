@@ -85,7 +85,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Data Flow
 
-![scheama.jpeg](/scheama.jpeg)
+![schema.jpg](/schema.jpg)
 
 
 ## Updating to New Releases
