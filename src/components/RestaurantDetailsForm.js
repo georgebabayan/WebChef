@@ -112,7 +112,7 @@ const RestaurantDetailsForm = React.createClass({
             <textarea className='form-control' type="text" name="about "onChange={this.onAboutChange}/>
           </div>
         </label><br/>
-        <button className='btn btn-primary' onClick={(e)=>this.props.handleInfoChange(e, this.state.info)}>Create Your Webpage</button>
+        <button className='btn btn-primary' onClick={(e)=>this.props.handleInfoChange(e, this.state.info)}>Create Your Website</button>
       </form>
     </div>
     )
