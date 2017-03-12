@@ -21,7 +21,7 @@ const Contact = React.createClass({
     return (
       <div>
         <h2>Contact</h2>
-        <table className='table table-condensed'>
+        <table>
           <tbody>
             {contactInfo}
           </tbody>

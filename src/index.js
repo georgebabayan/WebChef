@@ -1,4 +1,3 @@
-require('dotenv').config()
 const React = require('react')
 const ReactDOM = require('react-dom')
 const { Route, Router, IndexRoute, hashHistory } = require('react-router')
@@ -8,6 +7,7 @@ const Dashboard = require('./containers/Dashboard')
 const Static = require('./containers/Static')
 import './styles.css'
 import './static.css'
+require('dotenv').config()
 
 const App = React.createClass({
   render(){
