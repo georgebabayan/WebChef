@@ -1,9 +1,12 @@
 const React = require('react')
+const Dashboard = require('./Dashboard')
 
 const Landing = React.createClass({
   render(){
     return (
-      <div>in landing</div>
+      <div>
+        <Dashboard />
+      </div>
     )
   }
 })
