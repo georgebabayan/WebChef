@@ -38,9 +38,11 @@ const MenuContainer = React.createClass({
   render(){
     var { menu, newItem } = this.state
 
-    var menuItems = menu.map((item) => {
-      return <MenuItem key={item.name} data={item} updateData={this.updateData} handleRemove={this.handleRemove} />
-    })
+    if(menu) {
+      var menuItems = menu.map((item) => {
+        return <MenuItem key={item.name} data={item} updateData={this.updateData} handleRemove={this.handleRemove} />
+      })
+    }
 
     return (
       <div>
