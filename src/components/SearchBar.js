@@ -1,6 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import { Link } from 'react-router'
 
 var SearchBar = React.createClass({
   displayName: 'Search Bar',
@@ -24,7 +25,9 @@ var SearchBar = React.createClass({
   render () {
     return (
       <div id="search-bar">
-        <p>Enter your restaurant's name</p>
+        <div id='search-bar-text'>
+          <p>Enter your restaurant's name</p>
+        </div>
         <Select
           onChange={this.onChange}
           placeholder="Restaurant"
@@ -32,6 +35,9 @@ var SearchBar = React.createClass({
           simpleValue
           value={this.state.value}
           />
+          <Link to='/'>
+            <button className='btn btn-primary'>Go</button>
+          </Link>
       </div>
     );
   }
