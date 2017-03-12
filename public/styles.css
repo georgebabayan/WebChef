@@ -1,0 +1,15 @@
+body {
+  font-family: Arial;
+}
+
+.main-title {
+  font-family: 'Lobster', cursive;
+  font-size: 4em;
+  text-align: center;
+}
+
+#search-bar {
+  width: 50%;
+  text-align: center;
+  margin: auto;
+}
