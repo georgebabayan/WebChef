@@ -12034,8 +12034,17 @@ module.exports = Dashboard;
 "use strict";
 
 
+var _SearchBar = __webpack_require__(239);
+
+var _SearchBar2 = _interopRequireDefault(_SearchBar);
+
+__webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-select/dist/react-select.css\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 var React = __webpack_require__(6);
 var Dashboard = __webpack_require__(110);
+
 
 var Landing = React.createClass({
   displayName: 'Landing',
@@ -12043,7 +12052,8 @@ var Landing = React.createClass({
     return React.createElement(
       'div',
       null,
-      React.createElement(Dashboard, null)
+      React.createElement(Dashboard, null),
+      React.createElement(_SearchBar2.default, null)
     );
   }
 });
@@ -26800,6 +26810,68 @@ var MenuContainer = React.createClass({
 });
 
 module.exports = MenuContainer;
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactSelect = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-select\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()));
+
+var _reactSelect2 = _interopRequireDefault(_reactSelect);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SearchBar = _react2.default.createClass({
+  displayName: 'Search Bar',
+  propTypes: {
+    label: _react2.default.PropTypes.string
+  },
+  getInitialState: function getInitialState() {
+    return {
+      options: [{ value: 'mcdonalds', label: 'McDonalds' }, { value: 'burger king', label: 'Burger King' }, { value: "bob's burgers", label: "Bob's Burgers" }],
+      value: null
+    };
+  },
+  onChange: function onChange(value) {
+    this.setState({ value: value });
+    console.log('Select value changed to', value);
+  },
+  render: function render() {
+    return _react2.default.createElement(
+      'div',
+      { className: 'section' },
+      _react2.default.createElement(
+        'h3',
+        { className: 'section-heading' },
+        this.props.label
+      ),
+      _react2.default.createElement(_reactSelect2.default, {
+        onChange: this.onChange,
+        options: this.state.options,
+        simpleValue: true,
+        value: this.state.value
+      }),
+      _react2.default.createElement(
+        'div',
+        null,
+        'Enter your restaurant\'s name'
+      )
+    );
+  }
+});
+
+exports.default = SearchBar;
 
 /***/ })
 /******/ ]);
