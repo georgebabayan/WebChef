@@ -13607,7 +13607,6 @@ var Dashboard = React.createClass({
   render: function render() {
     var database = this.state.database;
 
-    console.log(database);
 
     return React.createElement(
       'div',
@@ -13683,12 +13682,14 @@ module.exports = Layout;
 
 var React = __webpack_require__(3);
 var MenuItem = __webpack_require__(116);
+var NewItem = __webpack_require__(264);
 
 var MenuContainer = React.createClass({
   displayName: 'MenuContainer',
   getInitialState: function getInitialState() {
     return {
-      menu: this.props.menu
+      menu: this.props.menu,
+      newItem: false
     };
   },
   handleRemove: function handleRemove(item) {
@@ -13704,10 +13705,25 @@ var MenuContainer = React.createClass({
     menu[index] = data;
     this.props.handleMenuChange(menu);
   },
+  handleNewButtonClick: function handleNewButtonClick() {
+    this.setState({ newItem: true });
+  },
+  handleNewItemSubmit: function handleNewItemSubmit(e, vals) {
+    e.preventDefault();
+    var menu = Object.assign([], this.state.menu);
+    menu.push(vals);
+    this.props.handleMenuChange(menu);
+    this.setState({ newItem: false });
+  },
+  componentWillReceiveProps: function componentWillReceiveProps(p) {
+    this.setState({ menu: p.menu });
+  },
   render: function render() {
     var _this = this;
 
-    var menu = this.state.menu;
+    var _state = this.state,
+        menu = _state.menu,
+        newItem = _state.newItem;
 
 
     var menuItems = menu.map(function (item) {
@@ -13726,7 +13742,13 @@ var MenuContainer = React.createClass({
         'table',
         null,
         menuItems
-      )
+      ),
+      !newItem && React.createElement(
+        'button',
+        { onClick: this.handleNewButtonClick },
+        'New Item'
+      ),
+      newItem && React.createElement(NewItem, { handleNewItemSubmit: this.handleNewItemSubmit })
     );
   }
 });
@@ -32160,6 +32182,67 @@ module.exports = g;
 
 module.exports = __webpack_require__(115);
 
+
+/***/ }),
+/* 264 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var React = __webpack_require__(3);
+
+var NewItem = React.createClass({
+  displayName: 'NewItem',
+  getInitialState: function getInitialState() {
+    return {
+      name: '',
+      description: '',
+      price: ''
+    };
+  },
+  handleChange: function handleChange(e, prop) {
+    this.setState(_defineProperty({}, prop, e.target.value));
+  },
+  sendVals: function sendVals() {
+    var _state = this.state,
+        name = _state.name,
+        description = _state.description,
+        price = _state.price;
+
+    return { name: name, description: description, price: price };
+  },
+  render: function render() {
+    var _this = this;
+
+    var handleNewItemSubmit = this.props.handleNewItemSubmit;
+
+
+    var fields = ['name', 'description', 'price'].map(function (prop) {
+      return React.createElement(
+        'label',
+        { key: prop },
+        prop,
+        React.createElement('input', { onChange: function onChange(e) {
+            return _this.handleChange(e, prop);
+          }, type: 'text', name: prop }),
+        React.createElement('br', null)
+      );
+    });
+    return React.createElement(
+      'form',
+      { onSubmit: function onSubmit(e) {
+          return handleNewItemSubmit(e, _this.sendVals());
+        } },
+      fields,
+      React.createElement('input', { type: 'submit', value: 'Add Item' })
+    );
+  }
+});
+
+module.exports = NewItem;
 
 /***/ })
 /******/ ]);

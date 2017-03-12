@@ -1,10 +1,12 @@
 const React = require('react')
 const MenuItem = require('../components/MenuItem')
+const NewItem = require('../components/NewItem')
 
 const MenuContainer = React.createClass({
   getInitialState(){
     return {
-      menu: this.props.menu
+      menu: this.props.menu,
+      newItem: false
     }
   },
   handleRemove(item){
@@ -20,8 +22,21 @@ const MenuContainer = React.createClass({
     menu[index] = data
     this.props.handleMenuChange(menu)
   },
+  handleNewButtonClick(){
+    this.setState({ newItem: true })
+  },
+  handleNewItemSubmit(e, vals){
+    e.preventDefault()
+    var menu = Object.assign([], this.state.menu)
+    menu.push(vals)
+    this.props.handleMenuChange(menu)
+    this.setState({ newItem: false })
+  },
+  componentWillReceiveProps(p){
+    this.setState({ menu: p.menu })
+  },
   render(){
-    var { menu } = this.state
+    var { menu, newItem } = this.state
 
     var menuItems = menu.map((item) => {
       return <MenuItem key={item.name} data={item} updateData={this.updateData} handleRemove={this.handleRemove} />
@@ -33,6 +48,12 @@ const MenuContainer = React.createClass({
         <table>
           {menuItems}
         </table>
+        {!newItem &&
+          <button onClick={this.handleNewButtonClick}>New Item</button>
+        }
+        {newItem &&
+          <NewItem handleNewItemSubmit={this.handleNewItemSubmit}/>
+        }
       </div>
     )
   }

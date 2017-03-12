@@ -39,7 +39,6 @@ const Dashboard = React.createClass({
   },
   render(){
     var { database } = this.state
-    console.log(database)
 
     return (
       <div>
