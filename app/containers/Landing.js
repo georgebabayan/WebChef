@@ -8,6 +8,7 @@ const Landing = React.createClass({
     return (
       <div>
         <Dashboard />
+        <h1 className='main-title'>Food.Rx</h1>
         <SearchBar />
       </div>
     )
