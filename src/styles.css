@@ -1,15 +1,28 @@
 body {
   font-family: Arial;
+  color: white;
+}
+
+p {
+  font-size: 1.5em;
+  text-shadow: 2px 2px #ff0000;
 }
 
 #landing {
+  background-image: url(../public/food-background.jpg);
+  min-height: 100vh;
+}
 
+#landing-content {
+  padding-top: 300px;
 }
 
 .main-title {
   font-family: 'Lobster', cursive;
-  font-size: 4em;
+  font-size: 6em;
   text-align: center;
+  margin-top: 0;
+  text-shadow: 2px 2px #ff0000;
 }
 
 #search-bar {

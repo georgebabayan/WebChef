@@ -35,7 +35,7 @@ var SearchBar = React.createClass({
           simpleValue
           value={this.state.value}
           />
-          <Link to='/'>
+          <Link to='/dashboard'>
             <button className='btn btn-primary'>Go</button>
           </Link>
       </div>
