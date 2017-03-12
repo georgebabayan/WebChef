@@ -83,6 +83,11 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [`npm run build` fails on Heroku](#npm-run-build-fails-on-heroku)
 - [Something Missing?](#something-missing)
 
+## Data Flow
+
+![scheama.jpeg](/scheama.jpeg)
+
+
 ## Updating to New Releases
 
 Create React App is divided into two packages:
