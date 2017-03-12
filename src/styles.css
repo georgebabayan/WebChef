@@ -2,11 +2,6 @@ body {
   font-family: Arial;
 }
 
-p {
-  font-size: 1.5em;
-  text-shadow: 2px 2px #ff0000;
-}
-
 #landing {
   background-image: url(../public/food-background.jpg);
   min-height: 100vh;
@@ -15,6 +10,11 @@ p {
 #landing-content {
   padding-top: 300px;
   color: white;
+}
+
+#landing-content p {
+  font-size: 1.5em;
+  text-shadow: 2px 2px #ff0000;
 }
 
 .main-title {
@@ -37,4 +37,20 @@ p {
 .btn {
   margin-top: 5px;
   width: 100px;
+}
+
+#staticLanding {
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+#staticLanding h1 {
+  text-align: center;
+  width: 100%;
+  top: 40%;
+  position: absolute;
+  font-size: 150px;
+  text-shadow: 0px 0px 15px black;
+  color: whitesmoke;
 }
