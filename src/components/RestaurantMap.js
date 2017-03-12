@@ -21,6 +21,7 @@ const RestaurantMap = React.createClass({
   render(){
     return (
       <div>
+        <h2>Find us here...</h2>
         <div id='map'></div>
       </div>
     )
