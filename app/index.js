@@ -1,10 +1,17 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
+const { Route, Router, IndexRoute, hashHistory } = require('react-router')
+const Layout = require('./containers/Layout')
+const Landing = require('./containers/Landing')
 
 const App = React.createClass({
   render(){
     return (
-      <div>here is the app</div>
+      <Router history={hashHistory}>
+        <Route path='/' component={Layout} >
+          <IndexRoute component={Landing} />
+        </Route>
+      </Router>
     )
   }
 })
