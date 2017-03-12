@@ -15,8 +15,8 @@ const App = React.createClass({
       <Router history={hashHistory}>
         <Route path='/' component={Layout} >
           <IndexRoute component={Landing} />
-          <Route path='/:id' component={Static} />
-          <Route path='/dashboard' component={Dashboard} />
+          <Route path='/restaurant/:id' component={Static} />
+          <Route path='/dashboard/:id' component={Dashboard} />
         </Route>
       </Router>
     )

@@ -32,6 +32,15 @@ var SearchBar = React.createClass({
     this.setState({ value });
     console.log('Select value changed to', value);
   },
+  findRestaurantId() {
+    if (this.state.options && this.state.value) {
+      var val = this.state.value;
+      var restaurant = this.state.options.filter(function(obj) {
+        return obj.value === val;
+      });
+      return restaurant[0].rid;
+    }
+  },
   render () {
     return (
       <div id="search-bar">
@@ -45,7 +54,7 @@ var SearchBar = React.createClass({
           simpleValue
           value={this.state.value}
           />
-          <Link to='/dashboard'>
+          <Link to={'/dashboard/'+this.findRestaurantId()}>
             <button className='btn btn-primary'>Go</button>
           </Link>
       </div>
