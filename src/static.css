@@ -1,0 +1,62 @@
+#staticLanding {
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+}
+
+#staticLanding h1 {
+  text-align: center;
+  width: 100%;
+  top: 40%;
+  position: absolute;
+  font-size: 150px;
+  text-shadow: 0px 0px 15px black;
+  color: whitesmoke;
+}
+
+#staticPage h2 {
+  text-align: center;
+  padding: 50px;
+}
+
+#staticPage p {
+  padding: 20px;
+}
+
+#staticPage table {
+  border: 1px solid black;
+  width: 300px;
+  margin: auto;
+}
+
+#staticPage td {
+  padding: 10px;
+  width: 50%;
+  text-align: left;
+}
+
+#staticPage #imagesScrollDiv {
+  height: 400px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+#staticPage #imagesScrollDiv:hover {
+  cursor: all-scroll;
+}
+
+#staticPage #imagesScrollDiv::-webkit-scrollbar {
+  display: none;
+}
+
+#staticPage #imagesScrollDiv img {
+  display: inline-block;
+  height: 100%;
+}
+
+#map {
+  height: 500px;
+  max-width: 1000px;
+  margin: auto;
+}

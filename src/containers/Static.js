@@ -1,4 +1,7 @@
 const React = require('react')
+const Contact = require('../components/Contact')
+const Images = require('../components/Images')
+const RestaurantMap = require('../components/RestaurantMap')
 
 var data = { 
   "rid": 2,
@@ -52,9 +55,14 @@ const Static = React.createClass({
           {menuItems}
         </ul>
 
-        <h2>About</h2>
-        {data.about}
+        <Images />
 
+        <h2>About</h2>
+        <p>{data.about}</p>
+
+        <RestaurantMap />
+
+        <Contact data={data} />
 
 
       </div>
