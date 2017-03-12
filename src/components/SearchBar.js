@@ -55,7 +55,7 @@ var SearchBar = React.createClass({
           value={this.state.value}
           />
           <Link to={'/dashboard/'+this.findRestaurantId()}>
-            <button className='btn btn-primary'>Go</button>
+            <button className='btn btn-primary' id='go'>Go</button>
           </Link>
       </div>
     );

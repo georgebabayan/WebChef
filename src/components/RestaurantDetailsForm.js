@@ -41,11 +41,28 @@ const RestaurantDetailsForm = React.createClass({
     newState.postal_code = e.target.value
     this.setState({oldState: newState})
   },
+  onAboutChange(e) {
+    let oldState = this.state.info;
+    let newState = this.state.info;
+    newState.about = e.target.value
+    this.setState({oldState: newState})
+  },
+  onEmailChange(e) {
+    let oldState = this.state.info;
+    let newState = this.state.info;
+    newState.email = e.target.value
+    this.setState({oldState: newState})
+  },
+  onFacebookChange(e) {
+    let oldState = this.state.info;
+    let newState = this.state.info;
+    newState.facebook = e.target.value
+    this.setState({oldState: newState})
+  },
   render() {
   return (
     <div id="restaurant-details">
-      <h2>Restaurant Details</h2>
-      <p>{JSON.stringify(this.state.info)}</p>
+      <h2>{this.props.info.name} Details</h2>
       <form>
         <label className='col-form-label'>
           <div className='form-group form-inline'>
@@ -77,7 +94,25 @@ const RestaurantDetailsForm = React.createClass({
             <input className='form-control' type="text" name="postal_code" value={this.state.info.postal_code} onChange={this.onZipChange}/>
           </div>
         </label>
-        <button className='btn btn-primary' onClick={()=>this.props.handleInfoChange(this.state.info)}>Submit</button>
+        <label className='col-form-label'>
+          <div className='form-group form-inline'>
+            Email:
+            <input className='form-control' type="text" name="email "onChange={this.onEmailChange}/>
+          </div>
+        </label>
+        <label className='col-form-label'>
+          <div className='form-group form-inline'>
+            Facebook:
+            <input className='form-control' type="text" name="facebook "onChange={this.onFacebookChange}/>
+          </div>
+        </label>
+        <label className='col-form-label'>
+          <div className='form-group form-inline'>
+            About:
+            <textarea className='form-control' type="text" name="about "onChange={this.onAboutChange}/>
+          </div>
+        </label><br/>
+        <button className='btn btn-primary' onClick={(e)=>this.props.handleInfoChange(e, this.state.info)}>Create Your Webpage</button>
       </form>
     </div>
     )
