@@ -1,6 +1,5 @@
 body {
   font-family: Arial;
-  color: white;
 }
 
 p {
@@ -15,6 +14,7 @@ p {
 
 #landing-content {
   padding-top: 300px;
+  color: white;
 }
 
 .main-title {
