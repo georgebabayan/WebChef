@@ -13383,6 +13383,7 @@ var _require = __webpack_require__(236),
 
 var Layout = __webpack_require__(120);
 var Landing = __webpack_require__(119);
+var Dashboard = __webpack_require__(118);
 
 
 var App = React.createClass({
@@ -13394,7 +13395,8 @@ var App = React.createClass({
       React.createElement(
         Route,
         { path: '/', component: Layout },
-        React.createElement(IndexRoute, { component: Landing })
+        React.createElement(IndexRoute, { component: Landing }),
+        React.createElement(Route, { path: '/dashboard', component: Dashboard })
       )
     );
   }
@@ -13633,7 +13635,6 @@ __webpack_require__(261);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var React = __webpack_require__(3);
-var Dashboard = __webpack_require__(118);
 
 
 var Landing = React.createClass({
@@ -13642,7 +13643,6 @@ var Landing = React.createClass({
     return React.createElement(
       'div',
       null,
-      React.createElement(Dashboard, null),
       React.createElement(
         'h1',
         { className: 'main-title' },
