@@ -47,7 +47,7 @@ const Static = React.createClass({
         <h2>About</h2>
         <p>{data.about}</p>
 
-        <RestaurantMap />
+        <RestaurantMap data={data}/>
 
         <Contact data={data} />
 
