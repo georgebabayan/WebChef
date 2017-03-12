@@ -24,7 +24,11 @@ const Menu = React.createClass({
   var { data } = this.props
   var { show } = this.state
 
-  var menuItems = data.menu.map((item) => {
+  var menuItems;
+
+  if (data.menu) {
+
+  menuItems = data.menu.map((item) => {
     return (
       <div className='menuItemDiv' key={item.name}>
         <h3>{item.name}</h3>
@@ -34,6 +38,10 @@ const Menu = React.createClass({
       </div>
     )
   })
+
+} else {
+  menuItems = ''
+}
 
     return (
       <div id='menuContainerDiv' className={show}>
