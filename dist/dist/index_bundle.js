@@ -13427,10 +13427,12 @@ var MenuItem = React.createClass({
     };
   },
   handleClick: function handleClick(k, e) {
-    this.setState({ edit: !this.state.edit });
-    this.setState({ property: k });
+    this.setState({
+      edit: !this.state.edit,
+      property: k,
+      currentEl: e.currentTarget
+    });
     e.currentTarget.style.backgroundColor = 'whitesmoke';
-    this.setState({ currentEl: e.currentTarget });
   },
   handleValChange: function handleValChange(e) {
     this.setState({ newVal: e.target.value });
