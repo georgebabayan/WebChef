@@ -1,6 +1,5 @@
 const React = require('react')
 import SearchBar from '../components/SearchBar'
-// import 'react-select/dist/react-select.css';
 
 const Landing = React.createClass({
   render(){
