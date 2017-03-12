@@ -80,14 +80,15 @@
 
 #staticPage table {
   border: 1px solid black;
-  width: 300px;
-  margin: auto;
+  width: 100%;
+  background: black;
 }
 
 #staticPage td {
   padding: 10px;
   width: 50%;
   text-align: left;
+  color: white;
 }
 
 #staticPage #imagesScrollDiv {
@@ -123,4 +124,13 @@
 .showDiv {
   opacity: 1;
   transition: opacity 500ms;
+}
+
+.hideImages {
+  transform: translateX(100%);
+}
+
+.showImages {
+  transform: translateX(0%);
+  transition: transform 500ms linear;
 }

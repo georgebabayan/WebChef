@@ -12,7 +12,6 @@ const Menu = React.createClass({
   handleScroll(){
     var div = document.getElementById('menuContainerDiv')
     div = div.getBoundingClientRect().top
-    console.log(div, window.scrollY)
     if ( window.scrollY > 350){
       this.setState({ show: 'showDiv' })
       window.removeEventListener('scroll', this.handleScroll)

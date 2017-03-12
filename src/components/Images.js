@@ -10,13 +10,32 @@ var pics = [
 ]
 
 const Images = React.createClass({
-
+  getInitialState(){
+    return {
+      show: 'hideImages'
+    }
+  },
+  componentDidMount(){
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  handleScroll(){
+    var div = document.getElementById('imagesScrollDiv')
+    div = div.getBoundingClientRect().top
+    if ( window.scrollY > 900 ){
+      this.setState({ show: 'showImages' })
+      window.removeEventListener('scroll', this.handleScroll)
+    }
+  },
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   render(){
+    var { show } = this.state
 
     var images = pics.map((p) => <img key={p} src={p}/>)
 
     return (
-      <div id='imagesScrollDiv'>
+      <div id='imagesScrollDiv' className={show}>
         {images}
       </div>
     )
