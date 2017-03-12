@@ -5,8 +5,10 @@ const Landing = React.createClass({
   render(){
     return (
       <div id='landing'>
-        <h1 className='main-title'>Food.Rx</h1>
-        <SearchBar />
+        <div id='landing-content'>
+          <h1 className='main-title'>WebChef</h1>
+          <SearchBar />
+        </div>
       </div>
     )
   }
