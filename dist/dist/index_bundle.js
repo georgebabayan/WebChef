@@ -11951,6 +11951,8 @@ module.exports = ReactPropTypesSecret;
 "use strict";
 
 
+__webpack_require__(280);
+
 var React = __webpack_require__(6);
 var ReactDOM = __webpack_require__(77);
 
@@ -11962,6 +11964,7 @@ var _require = __webpack_require__(220),
 
 var Layout = __webpack_require__(113);
 var Landing = __webpack_require__(112);
+
 
 var App = React.createClass({
   displayName: 'App',
@@ -12019,23 +12022,19 @@ var SearchBar = _react2.default.createClass({
   render: function render() {
     return _react2.default.createElement(
       'div',
-      { className: 'section' },
+      { id: 'search-bar' },
       _react2.default.createElement(
-        'h3',
-        { className: 'section-heading' },
-        this.props.label
+        'p',
+        null,
+        'Enter your restaurant\'s name'
       ),
       _react2.default.createElement(_reactSelect2.default, {
         onChange: this.onChange,
+        placeholder: 'Restaurant',
         options: this.state.options,
         simpleValue: true,
         value: this.state.value
-      }),
-      _react2.default.createElement(
-        'div',
-        null,
-        'Enter your restaurant\'s name'
-      )
+      })
     );
   }
 });
@@ -12066,6 +12065,11 @@ var Landing = React.createClass({
     return React.createElement(
       'div',
       null,
+      React.createElement(
+        'h1',
+        { className: 'main-title' },
+        'Food.Rx'
+      ),
       React.createElement(_SearchBar2.default, null)
     );
   }
@@ -31956,6 +31960,49 @@ function clearRenderer() {
 
 ;
 module.exports = exports['default'];
+
+/***/ }),
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(257)();
+// imports
+
+
+// module
+exports.push([module.i, "body {\n  font-family: Arial;\n}\n\n.main-title {\n  font-family: 'Lobster', cursive;\n  font-size: 4em;\n  text-align: center;\n}\n\n#search-bar {\n  width: 50%;\n  text-align: center;\n  margin: auto;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(279);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(260)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../node_modules/css-loader/index.js!./styles.css", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js!./styles.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);

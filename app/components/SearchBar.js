@@ -22,15 +22,15 @@ var SearchBar = React.createClass({
   },
   render () {
     return (
-      <div className="section">
-        <h3 className="section-heading">{this.props.label}</h3>
+      <div id="search-bar">
+        <p>Enter your restaurant's name</p>
         <Select
           onChange={this.onChange}
+          placeholder="Restaurant"
           options={this.state.options}
           simpleValue
           value={this.state.value}
           />
-        <div>Enter your restaurant's name</div>
       </div>
     );
   }
